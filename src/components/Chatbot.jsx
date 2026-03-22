@@ -82,7 +82,7 @@ USER QUERY: ${userMessage}
       setMessages(prev => [...prev, { role: "assistant", content: responseText }]);
     } catch (error) {
       console.error("Chatbot error:", error);
-      setMessages(prev => [...prev, { role: "assistant", content: "Oops, something went wrong processing your request. Please try again later." }]);
+      setMessages(prev => [...prev, { role: "assistant", content: `Oops, something went wrong with the AI: ${error.message || "Unknown error"}. Please check your API key restrictions or quotas in Google Cloud Console.` }]);
     } finally {
       setIsTyping(false);
     }

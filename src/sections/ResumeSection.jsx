@@ -53,7 +53,7 @@ Instructions:
       setAiResponse(result.response.text());
     } catch (error) {
       console.error("AI Error:", error);
-      setAiResponse("Failed to connect to the AI model. Please try again.");
+      setAiResponse(`Failed to connect to the AI model: ${error.message}. Please verify your API key allows requests from this domain.`);
     } finally {
       setIsTyping(false);
     }
